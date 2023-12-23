@@ -8,6 +8,19 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+
+stages:
+- stage: 'build'
+  displayName: 'Build the web application'
+  jobs:
+  - job: 'build'
+    displayName: 'Build Job'
+    pool:
+      vmImage: 'ubuntu-20.04'
+      demands:
+      - npm
+      
+variables:
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
   dotnetSdkVersion: '6.x'
 
